@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="wrap">
+  <app-nav [navClass]="navClass">
+    <div class="btn btn-primary btn-s btn-menu" (click)="changeMenu()">
+      <a [ngClass]="buttonClass">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+    <ul class="nav">
+      <li><a routerLink='/list'><span class="icon-nav lmenu_user"></span><span class="nav-item">User
+            management</span></a></li>
+      <li><a routerLink='/group'><span class="icon-nav lmenu_group"></span><span class="nav-item">Group
+            management</span></a></li>
+    </ul>
+  </app-nav>
+
+  <section class="content-area">
+    <h2 class="ttl">Group Management</h2>
+    <article>
+      <app-manage-tool>
+        <app-search-box [placeholderContent]="textIntroduce">
+          <span class="icon-search"></span>
+        </app-search-box>
+        <app-a-element>
+          <button type="button" class="btn btn-sub">+ Add Group</button>
+        </app-a-element>
+      </app-manage-tool>
+      <app-manage-list>
+        <ul class="list">
+          <li>
+            <app-item-text>
+              Do some Thing
+            </app-item-text>
+            <app-action>
+              <span class="icon-trash2"></span>
+            </app-action>
+          </li>
+        </ul>
+      </app-manage-list>
+    </article>
+  </section>
+
+</div>

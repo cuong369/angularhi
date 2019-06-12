@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="wrap">
+
+    <app-nav [navClass]="navClass">
+        <div class="btn btn-primary btn-s btn-menu" (click)="changeMenu()">
+            <a [ngClass]="buttonClass">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <ul class="nav">
+            <li><a routerLink='/list'><span class="icon-nav lmenu_user"></span><span class="nav-item">User
+                        management</span></a></li>
+            <li><a routerLink='/group'><span class="icon-nav lmenu_group"></span><span class="nav-item">Group
+                        management</span></a></li>
+        </ul>
+    </app-nav>
+
+    <section [ngClass]="classSession">
+        <h2 class="ttl">New User Registration</h2>
+        <article>
+            <app-manage-tool>
+                <app-search-box [placeholderContent]="textIntroduce" (getText) = "getText($event)">
+                </app-search-box>
+                <app-radio-box (getCheck) = "getCheck($event)">
+                    <!-- <app-radio-box></app-radio-box> -->
+                </app-radio-box>
+                <app-a-element>
+                    <button type="button" class="btn btn-sub" (click)="addUserTemp()">+ Add</button>
+                </app-a-element>
+            </app-manage-tool>
+            <app-manage-list>
+                <ul class="list">
+                    <li *ngFor="let user of listUser">
+                        <app-item-text>
+                            <input type="text" class="textbox textbox-box2"
+                                placeholder="Please input your e-mail address" [value]="user.email">
+                        </app-item-text>
+                        <app-action>
+                            <span class="icon-delete"></span>
+                        </app-action>
+                        <app-radio-box [getId]="user.id" [role]="user.role"></app-radio-box>
+                    </li>
+                </ul>
+            </app-manage-list>
+            <div class="form-btn form-btn-manage">
+                <a routerLink='/list'>
+                    <button type="button" id="change-password-cancel" class="btn btn-default btn-l">Cancel</button>
+                </a>
+                <button type="button" id="modal-open-contentview" (click) = "addUser()" class="btn btn-primary btn-l">Save All</button>
+            </div>
+        </article>
+    </section>
+
+</div>

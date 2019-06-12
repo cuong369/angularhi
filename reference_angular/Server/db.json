@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "IFI-Solution",
+      "password": "3339",
+      "email": "ifis@coding.com",
+      "role": 1
+    },
+    {
+      "id": 2,
+      "name": "TranCuong",
+      "password": "3690",
+      "email": "buddha@gmail.com",
+      "role": 1
+    },
+    {
+      "id": 3,
+      "name": "Java",
+      "password": "3366",
+      "email": "java@coding.com.vn",
+      "role": 2
+    },
+    {
+      "id": 4,
+      "name": "Angular",
+      "password": "3333",
+      "email": "angular@coding.com",
+      "role": 3
+    }
+  ]
+}

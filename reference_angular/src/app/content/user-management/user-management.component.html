@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="wrap">
+
+  <app-nav [navClass]="navClass">
+    <div class="btn btn-primary btn-s btn-menu" (click)="changeMenu()">
+      <a [ngClass]="buttonClass">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+  </app-nav>
+
+  <section [ngClass]="classSession">
+    <div class="datatool">
+      <button type="button" class="btn btn-sub btn-s"><span class="icon-edit"></span>Edit</button>
+      <button type="button" class="btn btn-sub btn-s"><span class="icon-download"></span>Download</button>
+      <button type="button" class="btn btn-sub btn-s"><span class="icon-upload"></span>Upload</button>
+      <button type="button" class="btn btn-sub btn-s">+ row</button>
+      <button type="button" class="btn btn-danger btn-s btn-danger-tool"><span class="icon-trash"></span>Delete</button>
+      <button type="button" class="btn btn-primary btn-s"><span class="icon-save"></span>Save</button>
+    </div>
+    <div class="data-table-box">
+      <div class="data-table">
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </section>
+
+</div>

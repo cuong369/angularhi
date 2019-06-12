@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div class="wrap">
+    <app-nav [navClass]="navClass">
+        <div class="btn btn-primary btn-s btn-menu" (click)="changeMenu()">
+            <a [ngClass]="buttonClass">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <ul class="nav">
+            <li><a routerLink='/list'><span class="icon-nav lmenu_user"></span><span class="nav-item">User
+                        management</span></a></li>
+            <li><a routerLink='/group'><span class="icon-nav lmenu_group"></span><span class="nav-item">Group
+                        management</span></a></li>
+        </ul>
+    </app-nav>
+    <section [ngClass]="classSession">
+        <h2 class="ttl">User management</h2>
+        <article>
+            <app-manage-tool>
+                <app-search-box [placeholderContent]="textIntroduce">
+                    <span class="icon-search"></span>
+                </app-search-box>
+                <app-a-element>
+                    <button type="button" class="btn btn-sub">+ New User Registration</button>
+                </app-a-element>
+            </app-manage-tool>
+            <app-manage-list>
+                <ul class="list">
+                    <li *ngFor="let user of users" [class.list-myaccount]="user.id === idLogin">
+                        <app-item-text>
+                            <input type="text" class="textbox textbox-box2"
+                                placeholder="Please input your e-mail address" [value]="user.email" (keyup)="updateEmail($event)">
+                            <button type="button" class="btn btn-sub" (click)="updateUser(user)">Edit</button>
+                        </app-item-text>
+                        <app-action>
+                            <span class="icon-trash2" (click)="deleteUser(user.id)"></span>
+                        </app-action>
+                        <app-radio-box [getId]="user.id" [role]="user.role" [email]="user.email"></app-radio-box>
+                    </li>
+                </ul>
+            </app-manage-list>
+        </article>
+    </section>
+</div>

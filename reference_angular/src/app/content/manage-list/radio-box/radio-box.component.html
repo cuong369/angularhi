@@ -1,0 +1,8 @@
+<div class="radio-box">
+    <input type="radio" name="RadioAuth{{ getId }}" value="radio" id="auth{{ getId }}-1" (change)="getStatus($event)" [checked]="role === 1" [disabled]="email === emailLogin">
+    <label for="auth{{ getId }}-1" class="radio">Administrator</label>
+    <input type="radio" name="RadioAuth{{ getId }}" value="radio" id="auth{{ getId }}-2" (change)="getStatus($event)" [checked]="role === 2" [disabled]="email === emailLogin">
+    <label for="auth{{ getId }}-2" class="radio">Editor</label>
+    <input type="radio" name="RadioAuth{{ getId }}" value="radio" id="auth{{ getId }}-3" (change)="getStatus($event)" [checked]="role === 3" [disabled]="email === emailLogin">
+    <label for="auth{{ getId }}-3" class="radio">Normal</label>
+</div>
